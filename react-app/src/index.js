@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import './index.css';
 
 function BookList() {
     return (
-      <section>
+      <section className='booklist'>
       <Book/>
       <Book/>
       <Book/>
@@ -18,16 +18,15 @@ const Book =() => {
 return(
   <article>
     <Image></Image>
-    <Title></Title>
     <Author></Author>
-    
+    <Title></Title>
   </article>
   ); 
 };
 
-const Image =() => (<img src="https://m.media-amazon.com/images/I/81VDgrbTN+L._AC._SR360,460.jpg" alt=""/>
+const Image =() => (<img src="https://m.media-amazon.com/images/I/51uCRF3qUUL._AC._SR180,230.jpg" alt=""/>
 );
 
 const Author =() => <h1>The Bone Spindle</h1>;
-const Title =() => <h4>Engelstalige uitgave </h4>;
+const Title =() => <h4>School Trip: A Graphic Novel  </h4>;
 ReactDOM.render(<BookList/>,document.getElementById('root'));
