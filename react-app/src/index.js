@@ -2,31 +2,40 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+const firstBook ={
+  img:'https://m.media-amazon.com/images/I/51uCRF3qUUL._AC._SR180,230.jpg',
+  author:'The Bone Spindle',
+  title:'School Trip: A Graphic Novel'
+}
+const secondBook ={
+  img:'https://images-eu.ssl-images-amazon.com/images/I/81QVYq-iPkS._AC_UL160_SR160,160_.jpg',
+  author:'by Christophe Alexis Perez',
+  title:'School Trip: A Graphic Novel'
+}
+
 function BookList() {
     return (
       <section className='booklist'>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
+      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/>
+      <Book img={secondBook.img} title={secondBook.title} author={secondBook.author}/>
     </section>
     );
 }
 
-const Book =() => {
+const Book =(props) => {
+ console.log(props)
 return(
   <article>
-    <Image></Image>
-    <Author></Author>
-    <Title></Title>
+    <img src={props.img} alt=''/>
+    <h1>{props.title}</h1>
+    <h4>{props.author}</h4>
+
   </article>
   ); 
 };
 
-const Image =() => (<img src="https://m.media-amazon.com/images/I/51uCRF3qUUL._AC._SR180,230.jpg" alt=""/>
-);
 
-const Author =() => <h1>The Bone Spindle</h1>;
-const Title =() => <h4>School Trip: A Graphic Novel  </h4>;
+
+
+
 ReactDOM.render(<BookList/>,document.getElementById('root'));
